@@ -9,12 +9,12 @@ Scenario: Validate Empty EOI
 	When I try to validate my EOI
 	Then the result should fail
 
-	Scenario: Validate EOI with only Team Name
-	Given I have an EOI with only the team name supplied
+	Scenario: Validate EOI with Team name missing
+	Given I have an EOI with the team name missing
 	When I try to validate my EOI
 	Then the result should fail
 
-	Scenario: Validate EOI with only Team Manager Name
+	Scenario: Validate EOI with team manager missing
 	Given I have an EOI with only the team manager name
 	When I try to validate my EOI
 	Then the result should fail
