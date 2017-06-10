@@ -3,12 +3,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Annual Tournament</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar">
+        <div class="container">
+            <div class="banner-container">
+                <div class="navbar-collapse collapse">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -16,24 +25,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("Annual Tournament", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Register", "Register", "Home")</li>
+                <ul class="nav navbar-nav" style="width: 100%;">
+                    <li class="col-xs-3 text-center">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="col-xs-3 text-center">@Html.ActionLink("About", "About", "Home")</li>
+                    <li class="col-xs-3 text-center">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="col-xs-3 text-center">@Html.ActionLink("Register", "Register", "Home")</li>
+                    @*@Html.Partial("_LoginPartial")*@
                 </ul>
-                @Html.Partial("_LoginPartial")
+                
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
+    </div>
+    <div class="container">
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Annual Tournament</p>
         </footer>
     </div>
 

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using AnnualTournament.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -29,9 +31,46 @@ namespace AnnualTournament.Controllers
 
 		public ActionResult Register()
 		{
-			ViewBag.Message = "Your contact page.";
+			ViewBag.Message = "Your Registration page.";
+			var eoi = new ExpressionOfInterest();
 
-			return View();
+			return View(eoi);
+		}
+
+		[HttpPost]
+		[AllowAnonymous]
+		[ValidateAntiForgeryToken]
+		public async Task<ActionResult> Register(ExpressionOfInterest eoiViewModel)
+		{
+			if (ModelState.IsValid)
+			{
+				var expressionOfInterest = new ExpressionOfInterest
+				{
+					TeamName = eoiViewModel.TeamName,
+					TeamEmailAddress = eoiViewModel.TeamEmailAddress,
+					TeamManagerName = eoiViewModel.TeamManagerName
+				};
+
+				//Save to Db
+				//var result = await UserManager.CreateAsync(user, model.Password);
+				//if (result.Succeeded)
+				if (expressionOfInterest.ValidateExpressionOfInterest())
+				{
+					//await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+					// For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+					// Send an email with this link
+					// string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+					// var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+					// await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+					return RedirectToAction("RegisterSuccess", "Home");
+				}
+				//AddErrors(result);
+			}
+
+			// If we got this far, something failed, redisplay form
+			return View(eoiViewModel);
 		}
 	}
 }
