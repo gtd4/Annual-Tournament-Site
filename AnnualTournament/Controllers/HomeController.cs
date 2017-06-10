@@ -40,7 +40,7 @@ namespace AnnualTournament.Controllers
 		[HttpPost]
 		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
-		public async Task<ActionResult> Register(ExpressionOfInterest eoiViewModel)
+		public async Task<ActionResult> Register(RegisterExpressionOfInterestViewModel eoiViewModel)
 		{
 			if (ModelState.IsValid)
 			{
@@ -48,7 +48,10 @@ namespace AnnualTournament.Controllers
 				{
 					TeamName = eoiViewModel.TeamName,
 					TeamEmailAddress = eoiViewModel.TeamEmailAddress,
-					TeamManagerName = eoiViewModel.TeamManagerName
+					TeamManagerName = eoiViewModel.TeamManagerName,
+					HasPaid = false,
+					DateCreated = DateTime.Now,
+					DateModified = DateTime.Now,
 				};
 
 				//Save to Db
