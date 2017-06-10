@@ -26,5 +26,12 @@ namespace AnnualTournament.Controllers
 
 			return View();
 		}
+
+		public ActionResult Register()
+		{
+			ViewBag.Message = "Your contact page.";
+
+			return View();
+		}
 	}
 }
