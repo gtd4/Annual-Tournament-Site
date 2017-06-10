@@ -7,19 +7,32 @@
 Scenario: Validate Empty EOI
 	Given I have entered no data into my EOI
 	When I try to validate my EOI
-	Then the result should fail
+	Then the result should be false
 
 	Scenario: Validate EOI with Team name missing
 	Given I have an EOI with the team name missing
 	When I try to validate my EOI
-	Then the result should fail
+	Then the result should be false
 
 	Scenario: Validate EOI with team manager missing
-	Given I have an EOI with only the team manager name
+	Given I have an EOI with the team name missing
 	When I try to validate my EOI
-	Then the result should fail
+	Then the result should be false
 
-	Scenario: Validate EOI with only Team contact email
-	Given I have an EOI with only the team email address
+	Scenario: Validate EOI with Team contact email missing
+	Given I have an EOI with the team contact email
 	When I try to validate my EOI
-	Then the result should fail
+	Then the result should be false
+
+	Scenario: Validate email address
+	Given I have an email address of gav.com
+	When I try to validate the address
+	Then the result should be false
+
+	Scenario: Validate EOI
+	Given I have an EOI with the team manager name as Gavin
+	And the team as Saiyans
+	And the email address as gtd005@gmail.com
+	When I try to validate my EOI
+	Then the result should be false
+
