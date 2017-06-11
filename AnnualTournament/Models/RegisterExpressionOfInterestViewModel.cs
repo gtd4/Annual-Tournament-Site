@@ -8,6 +8,7 @@ namespace AnnualTournament.Models
 {
 	public class RegisterExpressionOfInterestViewModel
 	{
+		[DisplayName("Manager")]
 		public string TeamManagerName { get; set; }
 
 		[DisplayName("Team Name")]
