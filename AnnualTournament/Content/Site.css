@@ -24,9 +24,9 @@ textarea {
 
 .banner-container {
     min-height: 200px;
-    max-height: 200px;
-    background-color: white;
-    padding-top: 50px;
+    /*max-height: 200px;*/
+    background-color: black;
+    height: calc(100vh - 50px);
 
 }
 

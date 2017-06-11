@@ -9,14 +9,14 @@
 </head>
 <body>
     <div class="banner-container">
-        @*<img class="img-responsive" src="~/Content/Images/Banner.png" alt="banner image" style="height:100%" />*@
-        <div class="col-md-4 col-md-offset-4 banner-logo">
+        <img class="img-responsive" src="~/Content/Images/BannerImage.jpg" alt="banner image" style="height:100%" />
+        @*<div class="col-md-4 col-md-offset-4 banner-logo">
             <div class="col-xs-4" id="circle">
             </div>
             <div class="col-xs-8">
                 <h1>Annual Tournament</h1>
             </div>
-        </div>
+        </div>*@
     </div>
     <div class="navbar navbar-inverse">
         <div class="container">
@@ -30,10 +30,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" style="width: 100%;">
-                    <li class="col-xs-3 text-center">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li class="col-xs-3 text-center">@Html.ActionLink("About", "About", "Home")</li>
-                    <li class="col-xs-3 text-center">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li class="col-xs-3 text-center">@Html.ActionLink("Register", "Register", "Home")</li>
+                    <li class="col-xs-4 text-center">@Html.ActionLink("Home", "Index", "Home")</li>
+                    @*<li class="col-xs-3 text-center">@Html.ActionLink("About", "About", "Home")</li>*@
+                    <li class="col-xs-4 text-center">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="col-xs-4 text-center">@Html.ActionLink("Register", "Register", "Home")</li>
                     @*@Html.Partial("_LoginPartial")*@
                 </ul>
             </div>
