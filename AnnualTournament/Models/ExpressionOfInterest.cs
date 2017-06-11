@@ -9,10 +9,7 @@ namespace AnnualTournament.Models
 	public class ExpressionOfInterest
 	{
 		public string TeamManagerName { get; set; }
-
-		[DisplayName("Team Name")]
 		public string TeamName { get; set; }
-
 		public string TeamEmailAddress { get; set; }
 		public string MobileNumber { get; set; }
 		public string AlternateContactName { get; set; }
