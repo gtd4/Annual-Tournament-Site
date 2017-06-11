@@ -49,6 +49,9 @@ namespace AnnualTournament.Controllers
 					TeamName = eoiViewModel.TeamName,
 					TeamEmailAddress = eoiViewModel.TeamEmailAddress,
 					TeamManagerName = eoiViewModel.TeamManagerName,
+					AlternateContactName = eoiViewModel.AlternateContactName,
+					AlternateEmail = eoiViewModel.AlternateEmail,
+					AlternateMobileNumber = eoiViewModel.AlternateMobileNumber,
 					HasPaid = false,
 					DateCreated = DateTime.Now,
 					DateModified = DateTime.Now,
@@ -69,11 +72,19 @@ namespace AnnualTournament.Controllers
 
 					return RedirectToAction("RegisterExpressionSuccess", "Home");
 				}
-				//AddErrors(result);
+				AddErrors(expressionOfInterest.Errors);
 			}
 
 			// If we got this far, something failed, redisplay form
 			return View(eoiViewModel);
+		}
+
+		private void AddErrors(List<string> errors)
+		{
+			foreach (var error in errors)
+			{
+				ModelState.AddModelError("", error);
+			}
 		}
 
 		public ActionResult RegisterExpressionSuccess()

@@ -1,17 +1,17 @@
 ﻿@using AnnualTournament.Models
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Register Your Interest";
 }
 @model RegisterExpressionOfInterestViewModel
 
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+
 
 <div>
     @using (Html.BeginForm("Register", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
         @Html.AntiForgeryToken()
-        <h4>Register Your Interest</h4>
+
         <hr />
         @Html.ValidationSummary("", new { @class = "text-danger" })
         <div class="form-group">

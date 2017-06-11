@@ -8,12 +8,13 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar">
-        <div class="container">
-            <div class="banner-container">
-                <div class="navbar-collapse collapse">
-                    
-                </div>
+    <div class="banner-container">
+        @*<img class="img-responsive" src="~/Content/Images/Banner.png" alt="banner image" style="height:100%" />*@
+        <div class="col-md-4 col-md-offset-4 banner-logo">
+            <div class="col-xs-4" id="circle">
+            </div>
+            <div class="col-xs-8">
+                <h1>Annual Tournament</h1>
             </div>
         </div>
     </div>
@@ -35,7 +36,6 @@
                     <li class="col-xs-3 text-center">@Html.ActionLink("Register", "Register", "Home")</li>
                     @*@Html.Partial("_LoginPartial")*@
                 </ul>
-                
             </div>
         </div>
     </div>

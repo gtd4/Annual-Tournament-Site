@@ -21,22 +21,32 @@ namespace AnnualTournament.Models
 		public DateTime DateCreated { get; set; }
 		public DateTime DateModified { get; set; }
 
+		public List<string> Errors { get; }
+
+		public ExpressionOfInterest()
+		{
+			Errors = new List<string>();
+		}
+
 		public bool ValidateExpressionOfInterest()
 		{
 			var isvalid = true;
 			if (string.IsNullOrEmpty(TeamEmailAddress))
 			{
 				isvalid = false;
+				Errors.Add("Email Address is Empty");
 			}
 
 			if (string.IsNullOrEmpty(TeamManagerName))
 			{
 				isvalid = false;
+				Errors.Add("Manager is Empty");
 			}
 
 			if (!IsValidEmail())
 			{
 				isvalid = false;
+				Errors.Add("Email Address is not Valid");
 			}
 
 			return isvalid;
