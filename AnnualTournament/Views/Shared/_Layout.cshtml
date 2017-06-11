@@ -19,13 +19,13 @@
                         @Html.ActionLink("Annual Tournament", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </div>*@
             @*<div class="navbar-collapse collapse">*@
-                <ul class="nav navbar-nav" style="width: 100%;">
-                    <li class="col-xs-4 text-center">@Html.ActionLink("Home", "Index", "Home")</li>
-                    @*<li class="col-xs-3 text-center">@Html.ActionLink("About", "About", "Home")</li>*@
-                    <li class="col-xs-4 text-center">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li class="col-xs-4 text-center">@Html.ActionLink("Register", "Register", "Home")</li>
-                    @*@Html.Partial("_LoginPartial")*@
-                </ul>
+            <ul class="nav navbar-nav" style="width: 100%;">
+                <li class="col-xs-3 text-center">@Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="col-xs-3 text-center">@Html.ActionLink("The Cause", "About", "Home")</li>
+                <li class="col-xs-3 text-center">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li class="col-xs-3 text-center">@Html.ActionLink("Register", "Register", "Home")</li>
+                @*@Html.Partial("_LoginPartial")*@
+            </ul>
             @*</div>*@
         </div>
     </div>
