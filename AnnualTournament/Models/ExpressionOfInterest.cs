@@ -31,6 +31,11 @@ namespace AnnualTournament.Models
 		public bool ValidateExpressionOfInterest()
 		{
 			var isvalid = true;
+			if (string.IsNullOrEmpty(TeamName))
+			{
+				isvalid = false;
+				Errors.Add("Team Name is Empty");
+			}
 			if (string.IsNullOrEmpty(TeamEmailAddress))
 			{
 				isvalid = false;
