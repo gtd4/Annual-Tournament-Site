@@ -32,7 +32,7 @@ namespace AnnualTournament.Controllers
 		public ActionResult Register()
 		{
 			ViewBag.Message = "Your Registration page.";
-			var eoi = new ExpressionOfInterest();
+			var eoi = new RegisterExpressionOfInterestViewModel();
 
 			return View(eoi);
 		}
@@ -67,13 +67,18 @@ namespace AnnualTournament.Controllers
 					// var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
 					// await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-					return RedirectToAction("RegisterSuccess", "Home");
+					return RedirectToAction("RegisterExpressionSuccess", "Home");
 				}
 				//AddErrors(result);
 			}
 
 			// If we got this far, something failed, redisplay form
 			return View(eoiViewModel);
+		}
+
+		public ActionResult RegisterExpressionSuccess()
+		{
+			return View();
 		}
 	}
 }
