@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
-namespace AnnualTournament.Models
+namespace AnnualTournament.Common.Models
 {
 	public class ExpressionOfInterest
 	{

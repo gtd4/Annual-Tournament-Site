@@ -113,6 +113,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnnualTournament.Common\AnnualTournament.Common.csproj">
+      <Project>{C1FB32BD-E334-41DB-913A-AA966E45CCD5}</Project>
+      <Name>AnnualTournament.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AnnualTournament\AnnualTournament.csproj">
       <Project>{52CC432A-C8FE-4F21-ADA2-2EE96D4E9348}</Project>
       <Name>AnnualTournament</Name>

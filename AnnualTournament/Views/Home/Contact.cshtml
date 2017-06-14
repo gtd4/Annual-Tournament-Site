@@ -18,48 +18,51 @@
         <strong>Tournament Director:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
     </address>
 
-<div>
+<div class="col-xs-6 col-xs-offset-3">
 
-    
+    <div>
+        <h2 class="text-center">Make Enquiry</h2>
         @using (Html.BeginForm("Enquire", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {
             @Html.AntiForgeryToken()
 
-            
+
             @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
             <div class="form-group">
-                @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
+                @*@Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })*@
+                <div class="">
                     @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Enter Name here" })
                     @Html.ValidationMessageFor(m => m.Name)
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.EmailAddress, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
+                @*@Html.LabelFor(m => m.EmailAddress, new { @class = "col-md-2 control-label" })*@
+                <div class="">
                     @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control", @placeholder = "Enter Email Address here" })
                     @Html.ValidationMessageFor(m => m.EmailAddress)
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
+                @*@Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-2 control-label" })*@
+                <div class="">
                     @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @placeholder = "Enter Phone Number here" })
                     @Html.ValidationMessageFor(m => m.PhoneNumber)
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
+                @*@Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })*@
+                <div class="">
                     @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @placeholder = "Enter Message here" })
                     @Html.ValidationMessageFor(m => m.Message)
                 </div>
             </div>
 
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
+                <div class="">
                     <input type="submit" class="btn btn-default" value="Send" />
                 </div>
             </div>
         }
     </div>
+</div>
+

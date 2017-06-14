@@ -1,4 +1,5 @@
-﻿using AnnualTournament.Models;
+﻿using AnnualTournament.Common.Models;
+using AnnualTournament.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
