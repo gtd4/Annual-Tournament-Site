@@ -8,6 +8,7 @@ namespace AnnualTournament.Common.Models
 {
 	public class ExpressionOfInterest
 	{
+		public int ExpressionOfInterestId { get; set; }
 		public string TeamManagerName { get; set; }
 		public string TeamName { get; set; }
 		public string TeamEmailAddress { get; set; }

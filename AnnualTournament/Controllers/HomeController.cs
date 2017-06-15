@@ -50,6 +50,7 @@ namespace AnnualTournament.Controllers
 					TeamName = eoiViewModel.TeamName,
 					TeamEmailAddress = eoiViewModel.TeamEmailAddress,
 					TeamManagerName = eoiViewModel.TeamManagerName,
+					MobileNumber = eoiViewModel.MobileNumber,
 					AlternateContactName = eoiViewModel.AlternateContactName,
 					AlternateEmail = eoiViewModel.AlternateEmail,
 					AlternateMobileNumber = eoiViewModel.AlternateMobileNumber,
@@ -70,6 +71,18 @@ namespace AnnualTournament.Controllers
 					// string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
 					// var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
 					// await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+					using (var db = new ExpressionOfInterestContext())
+					{
+						db.ExpressionsOfInterest.Add(expressionOfInterest);
+						int result = await db.SaveChangesAsync();
+
+						var eois = db.ExpressionsOfInterest.ToList();
+
+						foreach (var eoi in eois)
+						{
+							var temp = eoi;
+						}
+					}
 
 					return RedirectToAction("RegisterExpressionSuccess", "Home");
 				}

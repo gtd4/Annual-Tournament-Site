@@ -7,7 +7,7 @@ using System.Web;
 
 namespace AnnualTournament.Common.Models
 {
-	public class ExpressionOfInterestContext
+	public class ExpressionOfInterestContext : DbContext
 	{
 		public DbSet<ExpressionOfInterest> ExpressionsOfInterest { get; set; }
 	}
