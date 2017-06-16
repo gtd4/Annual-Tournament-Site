@@ -185,9 +185,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706151117262_init.cs" />
-    <Compile Include="Migrations\201706151117262_init.Designer.cs">
-      <DependentUpon>201706151117262_init.cs</DependentUpon>
+    <Compile Include="Migrations\201706161053164_first.cs" />
+    <Compile Include="Migrations\201706161053164_first.Designer.cs">
+      <DependentUpon>201706161053164_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -230,7 +230,7 @@
     <Content Include="Areas\Admin\Views\ExpressionOfInterests\Details.cshtml" />
     <Content Include="Areas\Admin\Views\ExpressionOfInterests\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ExpressionOfInterests\Index.cshtml" />
-    <None Include="Properties\PublishProfiles\AnnualTournament - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\AnnualTournamentWebApp - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -308,8 +308,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706151117262_init.resx">
-      <DependentUpon>201706151117262_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706161053164_first.resx">
+      <DependentUpon>201706161053164_first.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
