@@ -1,0 +1,12 @@
+﻿@model AnnualTournament.Areas.Admin.Models.Notification
+@{
+    ViewBag.Title = "index";
+}
+
+<h2>index</h2>
+@using (Html.BeginForm("SendNotification", "Notification"))
+{
+    @Html.AntiForgeryToken()
+    @Html.TextAreaFor(m => m.Message)
+    <input type="submit" value="Send Notification" />
+}
