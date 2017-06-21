@@ -33,7 +33,7 @@ namespace AnnualTournament.Models
 		[DisplayName("Alternate Mobile")]
 		public string AlternateMobileNumber { get; set; }
 
-		[Required(ErrorMessage = "Please Enter an Alternate")]
+		[Required(ErrorMessage = "Please Enter an Alternate Email")]
 		[DisplayName("Alternate Email")]
 		public string AlternateEmail { get; set; }
 	}

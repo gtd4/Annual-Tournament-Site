@@ -191,6 +191,10 @@
     <Compile Include="Migrations\201706161053164_first.Designer.cs">
       <DependentUpon>201706161053164_first.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706210714237_Update of EOI.cs" />
+    <Compile Include="Migrations\201706210714237_Update of EOI.Designer.cs">
+      <DependentUpon>201706210714237_Update of EOI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EnquiryViewModel.cs" />
@@ -314,6 +318,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706161053164_first.resx">
       <DependentUpon>201706161053164_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706210714237_Update of EOI.resx">
+      <DependentUpon>201706210714237_Update of EOI.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
