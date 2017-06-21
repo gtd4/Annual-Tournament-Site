@@ -2,10 +2,12 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="description" content="Register your interest in the Annual Touch Tournament to Raise Funds for Kahn Marshall" />
+    <meta name="keywords" content="Kahn Marshall, Touch Rugby, Touch Tournament" />
+    <meta name="author" content="Gavin Downes" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Annual Tournament</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div class="navbar navbar-inverse">
@@ -44,14 +46,13 @@
 
     <div class="container body-content">
         @RenderBody()
-        
     </div>
     <div class="container">
         <footer>
             <p>&copy; @DateTime.Now.Year - Annual Tournament</p>
         </footer>
     </div>
-
+    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
