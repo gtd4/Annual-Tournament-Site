@@ -49,21 +49,45 @@ namespace AnnualTournament.Common.Models
 				Errors.Add("Manager is Empty");
 			}
 
-			if (!IsValidEmail())
+			if (string.IsNullOrEmpty(AlternateContactName))
+			{
+				isvalid = false;
+				Errors.Add("Alternate Contact is Empty");
+			}
+
+			if (string.IsNullOrEmpty(AlternateEmail))
+			{
+				isvalid = false;
+				Errors.Add("Alternate Email is Empty");
+			}
+
+			if (string.IsNullOrEmpty(AlternateMobileNumber))
+			{
+				isvalid = false;
+				Errors.Add("Alternate Mobile is Empty");
+			}
+
+			if (!IsValidEmail(TeamEmailAddress))
 			{
 				isvalid = false;
 				Errors.Add("Email Address is not Valid");
 			}
 
+			if (!IsValidEmail(AlternateEmail))
+			{
+				isvalid = false;
+				Errors.Add("Alternate Email is not Valid");
+			}
+
 			return isvalid;
 		}
 
-		public bool IsValidEmail()
+		public bool IsValidEmail(string email)
 		{
 			try
 			{
-				var addr = new System.Net.Mail.MailAddress(TeamEmailAddress);
-				return addr.Address == TeamEmailAddress;
+				var addr = new System.Net.Mail.MailAddress(email);
+				return addr.Address == email;
 			}
 			catch
 			{

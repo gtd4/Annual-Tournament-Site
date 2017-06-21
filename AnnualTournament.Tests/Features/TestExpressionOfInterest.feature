@@ -24,6 +24,26 @@
 	When I try to validate the address
 	Then the result should be false
 
+	Scenario:  Validate Alternate Email Address
+	Given I have an Alternate email address of gav.com
+	When I try to validate the Alternate address
+	Then the result should be false
+
+	Scenario: Validate EOI with Alternate Contact missing
+	Given I have an EOI with the Alternate Contact Missing
+	When I try to validate my EOI
+	Then the result should be false
+
+	Scenario: Validate EOI with Alternate Email missing
+	Given I have an EOI with the Alternate Email missing
+	When I try to validate my EOI
+	Then the result should be false
+
+	Scenario: Validate EOI with Alternate Mobile missing
+	Given I have an EOI with the Alternate Mobile missing
+	When I try to validate my EOI
+	Then the result should be false
+
 	Scenario: Validate EOI
 	Given I have an EOI with the team manager name as Gavin
 	And the team as Saiyans

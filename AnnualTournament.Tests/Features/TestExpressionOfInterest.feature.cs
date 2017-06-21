@@ -135,21 +135,89 @@ namespace AnnualTournament.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate Alternate Email Address")]
+        public virtual void ValidateAlternateEmailAddress()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Alternate Email Address", ((string[])(null)));
+#line 27
+ this.ScenarioSetup(scenarioInfo);
+#line 28
+ testRunner.Given("I have an Alternate email address of gav.com", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 29
+ testRunner.When("I try to validate the Alternate address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+ testRunner.Then("the result should be false", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate EOI with Alternate Contact missing")]
+        public virtual void ValidateEOIWithAlternateContactMissing()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate EOI with Alternate Contact missing", ((string[])(null)));
+#line 32
+ this.ScenarioSetup(scenarioInfo);
+#line 33
+ testRunner.Given("I have an EOI with the Alternate Contact Missing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 34
+ testRunner.When("I try to validate my EOI", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 35
+ testRunner.Then("the result should be false", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate EOI with Alternate Email missing")]
+        public virtual void ValidateEOIWithAlternateEmailMissing()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate EOI with Alternate Email missing", ((string[])(null)));
+#line 37
+ this.ScenarioSetup(scenarioInfo);
+#line 38
+ testRunner.Given("I have an EOI with the Alternate Email missing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 39
+ testRunner.When("I try to validate my EOI", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+ testRunner.Then("the result should be false", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate EOI with Alternate Mobile missing")]
+        public virtual void ValidateEOIWithAlternateMobileMissing()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate EOI with Alternate Mobile missing", ((string[])(null)));
+#line 42
+ this.ScenarioSetup(scenarioInfo);
+#line 43
+ testRunner.Given("I have an EOI with the Alternate Mobile missing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 44
+ testRunner.When("I try to validate my EOI", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 45
+ testRunner.Then("the result should be false", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate EOI")]
         public virtual void ValidateEOI()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate EOI", ((string[])(null)));
-#line 27
+#line 47
  this.ScenarioSetup(scenarioInfo);
-#line 28
+#line 48
  testRunner.Given("I have an EOI with the team manager name as Gavin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 29
+#line 49
  testRunner.And("the team as Saiyans", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
+#line 50
  testRunner.And("the email address as gtd005@gmail.com", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
+#line 51
  testRunner.When("I try to validate my EOI", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 32
+#line 52
  testRunner.Then("the result should be true", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

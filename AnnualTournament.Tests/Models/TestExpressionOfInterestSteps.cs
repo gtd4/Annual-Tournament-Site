@@ -15,7 +15,16 @@ namespace AnnualTournament.Tests.Models
 
 		public TestExpressionOfInterestSteps()
 		{
-			eoi = new ExpressionOfInterest();
+			eoi = new ExpressionOfInterest()
+			{
+				TeamName = "Saiyans",
+				TeamManagerName = "Chant",
+				TeamEmailAddress = "Chant@test.com",
+				MobileNumber = "1234567",
+				AlternateContactName = "Bob",
+				AlternateEmail = "bob@test.com",
+				AlternateMobileNumber = "7654321",
+			};
 		}
 
 		[Given(@"I have an EOI with the team name missing")]
@@ -30,10 +39,34 @@ namespace AnnualTournament.Tests.Models
 			eoi.TeamEmailAddress = string.Empty;
 		}
 
+		[Given(@"I have an EOI with the Alternate Contact Missing")]
+		public void GivenIHaveAnEOIWithTheAlternateContactMissing()
+		{
+			eoi.AlternateContactName = string.Empty;
+		}
+
+		[Given(@"I have an EOI with the Alternate Email missing")]
+		public void GivenIHaveAnEOIWithTheAlternateEmailMissing()
+		{
+			eoi.AlternateEmail = string.Empty;
+		}
+
+		[Given(@"I have an EOI with the Alternate Mobile missing")]
+		public void GivenIHaveAnEOIWithTheAlternateMobileMissing()
+		{
+			eoi.AlternateMobileNumber = string.Empty;
+		}
+
 		[Given(@"I have an email address of gav\.com")]
 		public void GivenIHaveAnEmailAddressOfGav_Com()
 		{
 			eoi.TeamEmailAddress = "gav.com";
+		}
+
+		[Given(@"I have an Alternate email address of gav\.com")]
+		public void GivenIHaveAnAlternateEmailAddressOfGav_Com()
+		{
+			eoi.AlternateEmail = "gav.com";
 		}
 
 		[Given(@"I have an EOI with the team manager name as Gavin")]
@@ -63,7 +96,13 @@ namespace AnnualTournament.Tests.Models
 		[When(@"I try to validate the address")]
 		public void WhenITryToValidateTheAddress()
 		{
-			isEmailValid = eoi.IsValidEmail();
+			isEmailValid = eoi.IsValidEmail(eoi.TeamEmailAddress);
+		}
+
+		[When(@"I try to validate the Alternate address")]
+		public void WhenITryToValidateTheAlternateAddress()
+		{
+			isEmailValid = eoi.IsValidEmail(eoi.AlternateEmail);
 		}
 
 		[Then(@"the result should be false")]
