@@ -6,10 +6,25 @@
     <meta name="keywords" content="Kahn Marshall, Touch Rugby, Touch Tournament" />
     <meta name="author" content="Gavin Downes" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="http://annualtournamentwebapp.azurewebsites.net/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Annual Tournament" />
+    <meta property="og:description" content="Register your interest in the Annual Touch Tournament to Raise Funds for Kahn Marshall" />
+    <meta property="og:image" content="http://annualtournamentwebapp.azurewebsites.net/Content/Images/BannerImage.jpg" />
+
     <title>@ViewBag.Title - Annual Tournament</title>
     @Styles.Render("~/Content/css")
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=1325645604222666";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
     <div class="navbar navbar-inverse">
         <div class="container">
             @*<div class="navbar-header">
@@ -45,6 +60,22 @@
     @*</div>*@
 
     <div class="container body-content">
+        <ul>
+            <li>
+                <div class="fb-share-button" data-href="http://annualtournamentwebapp.azurewebsites.net/" data-layout="button" data-size="large" data-mobile-iframe="false">
+                    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fannualtournamentwebapp.azurewebsites.net%2F&amp;src=sdkpreparse">
+                        Share
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Register a team for the KM Annual Tournament" data-hashtags="kmAnnualTournament" data-show-count="false">
+                    Tweet
+                </a>
+                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </li>
+        </ul>
         @RenderBody()
     </div>
     <div class="container">
