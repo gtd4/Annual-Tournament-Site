@@ -105,5 +105,15 @@ namespace AnnualTournament.Controllers
 		{
 			return View();
 		}
+
+		public ActionResult PrivacyPolicy()
+		{
+			return View();
+		}
+
+		public ActionResult TermsOfService()
+		{
+			return View();
+		}
 	}
 }

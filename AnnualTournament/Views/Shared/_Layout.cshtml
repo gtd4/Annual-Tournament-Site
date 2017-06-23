@@ -25,6 +25,7 @@
             js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=1325645604222666";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     <div class="navbar navbar-inverse">
         <div class="container">
             @*<div class="navbar-header">
@@ -46,36 +47,18 @@
             @*</div>*@
         </div>
     </div>
-    @*<div class="banner-container">
-
-            <img class="img-responsive center-block" src="~/Content/Images/BannerImage.jpg" alt="banner image" style="height:100%" />
-
-        @*<div class="col-md-4 col-md-offset-4 banner-logo">
-            <div class="col-xs-4" id="circle">
-            </div>
-            <div class="col-xs-8">
-                <h1>Annual Tournament</h1>
-            </div>
-        </div>*@
-    @*</div>*@
-
     <div class="container body-content">
-        <ul>
-            <li>
-                <div class="fb-share-button" data-href="http://annualtournamentwebapp.azurewebsites.net/" data-layout="button" data-size="large" data-mobile-iframe="false">
-                    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fannualtournamentwebapp.azurewebsites.net%2F&amp;src=sdkpreparse">
-                        Share
-                    </a>
-                </div>
-            </li>
-
-            <li>
-                <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Register a team for the KM Annual Tournament" data-hashtags="kmAnnualTournament" data-show-count="false">
-                    Tweet
-                </a>
-                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </li>
-        </ul>
+        <div class="col-sm-3">
+            <a class="btn btn-lg btn-block btn-social btn-twitter" href="https://twitter.com/intent/tweet?url=http://annualtournamentwebapp.azurewebsites.net/&text='Register Your Interest For The Annual Tournament'">
+                <span class="fa fa-twitter"></span> Share
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a class="btn btn-lg btn-block btn-social btn-facebook" id="shareBtn">
+                <span class="fa fa-facebook"></span>Share
+            </a>
+        </div>
+       
         @RenderBody()
     </div>
     <div class="container">
@@ -86,6 +69,16 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script>
+        document.getElementById('shareBtn').onclick = function () {
+            FB.ui({
+                app_id: '1325645604222666',
+                method: 'share',
+                display: 'popup',
+                href: 'http://annualtournamentwebapp.azurewebsites.net/',
+            }, function (response) { });
+        }
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
