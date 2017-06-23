@@ -79,7 +79,7 @@ namespace AnnualTournament.Controllers
 			switch (result)
 			{
 				case SignInStatus.Success:
-					return RedirectToAction("Index", "ExpressionOfInterests", new { area = "admin" });
+					return RedirectToAction("Index", "Admin", new { area = "admin" });
 
 				case SignInStatus.LockedOut:
 					return View("Lockout");

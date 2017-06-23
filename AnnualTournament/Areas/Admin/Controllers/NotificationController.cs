@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace AnnualTournament.Areas.Admin.Controllers
 {
+	[Authorize]
 	public class NotificationController : Controller
 	{
 		// GET: Admin/Notification
