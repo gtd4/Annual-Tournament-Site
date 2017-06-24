@@ -3,6 +3,35 @@
 }
 
 <h2>Index</h2>
-@Html.ActionLink("Admin Users", "Index", "AdminUser")
-@Html.ActionLink("ExpressionOfInterests", "Index", "ExpressionOfInterests")
-@Html.ActionLink("Notifications", "Index", "Notification")
+
+<div class="row">
+    <div class="col-xs-4 btn-admin text-center">
+        <a href="@Url.Action("index", "AdminUser")">
+            <i class="fa fa-user-o fa-6"></i>
+            <br />
+            <p>
+                Admin Users
+            </p>
+        </a>
+    </div>
+    <div class="col-xs-4 btn-admin text-center">
+        <a href="@Url.Action("index", "Notification")">
+            <i class="fa fa-envelope-o fa-6" aria-hidden="true"></i>
+            <br />
+            <p>
+                Notifications
+            </p>
+        </a>
+    </div>
+    <div class="col-xs-4 btn-admin text-center">
+        <a href="@Url.Action("index", "ExpressionOfInterests")">
+            <i class="fa fa-pencil-square-o fa-6" aria-hidden="true"></i>
+            <br />
+            <p>
+                Expressions Of Interests
+            </p>
+        </a>
+    </div>
+</div>
+
+
