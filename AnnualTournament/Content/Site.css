@@ -65,3 +65,12 @@ textarea {
 a.admin-link:hover{
     opacity: 0.9
 }
+
+span.fa{
+    color:white;
+    opacity: 0.5;
+}
+
+span.fa:hover{
+    opacity:1.0;
+}

@@ -48,22 +48,23 @@
         </div>
     </div>
     <div class="container body-content">
-        <div class="col-sm-3">
-            <a class="btn btn-lg btn-block btn-social btn-twitter" href="https://twitter.com/intent/tweet?url=http://annualtournamentwebapp.azurewebsites.net/&text='Register Your Interest For The Annual Tournament'">
-                <span class="fa fa-twitter"></span> Share
-            </a>
-        </div>
-        <div class="col-sm-3">
-            <a class="btn btn-lg btn-block btn-social btn-facebook" id="shareBtn">
-                <span class="fa fa-facebook"></span>Share
-            </a>
-        </div>
-       
-        @RenderBody()
+        @RenderBody()      
     </div>
     <div class="container">
         <footer>
             <p>&copy; @DateTime.Now.Year - Annual Tournament</p>
+            <div class="">
+                <div class="pull-right">
+                    <a class="btn btn-lg btn-block btn-social-icon" href="https://twitter.com/intent/tweet?url=http://annualtournamentwebapp.azurewebsites.net/&text='Register Your Interest For The Annual Tournament'">
+                        <span class="fa fa-twitter"></span>
+                    </a>
+                </div>
+                <div class="pull-right">
+                    <a class="btn btn-lg btn-block btn-social-icon" id="shareBtn">
+                        <span class="fa fa-facebook"></span>
+                    </a>
+                </div>
+            </div>
         </footer>
     </div>
     @Scripts.Render("~/bundles/modernizr")
