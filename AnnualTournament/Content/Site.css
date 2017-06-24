@@ -41,16 +41,27 @@ textarea {
     border-radius: 50px;
 }
 
-.nav{
+.nav {
     font-size: 30px;
 }
 
 @media screen and (max-width: 767px) {
-    .nav{
+    .nav {
         font-size: 14px;
     }
 }
 
-.btn-admin .fa-6{
+.btn-admin .fa-6 {
     font-size: 10em;
+
+}
+
+.btn-admin a{
+    text-decoration: none;
+    color: white;
+    
+}
+
+a.admin-link:hover{
+    opacity: 0.9
 }
