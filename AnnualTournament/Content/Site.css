@@ -53,24 +53,22 @@ textarea {
 
 .btn-admin .fa-6 {
     font-size: 10em;
-
 }
 
-.btn-admin a{
+.btn-admin a {
     text-decoration: none;
     color: white;
-    
 }
 
-a.admin-link:hover{
-    opacity: 0.9
+.admin-link:hover {
+    opacity: 0.9;
 }
 
-span.fa{
-    color:white;
+span.fa {
+    color: white;
     opacity: 0.5;
 }
 
-span.fa:hover{
-    opacity:1.0;
-}
+    span.fa:hover {
+        opacity: 1.0;
+    }

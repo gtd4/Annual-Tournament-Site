@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -43,7 +44,7 @@ namespace AnnualTournament.Areas.Admin.Controllers
 		// GET: Admin/AdminUser
 		public async Task<ActionResult> Index()
 		{
-			return View(await db.Users.ToListAsync());
+			return View(await UserManager.Users.ToListAsync());
 		}
 
 		public ActionResult Create()
@@ -75,6 +76,72 @@ namespace AnnualTournament.Areas.Admin.Controllers
 
 			// If we got this far, something failed, redisplay form
 			return View(model);
+		}
+
+		// GET: Admin/ExpressionOfInterests/Edit/5
+		public async Task<ActionResult> Edit(string id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			var user = await UserManager.FindByIdAsync(id);
+			if (user == null)
+			{
+				return HttpNotFound();
+			}
+			return View(user);
+		}
+
+		// POST: Admin/AdminUser/Edit/5
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<ActionResult> Edit([Bind(Include = "Id,Email")] ApplicationUser adminUser)
+		{
+			if (ModelState.IsValid)
+			{
+				await UserManager.UpdateAsync(adminUser);
+				return RedirectToAction("Index");
+			}
+			return View(adminUser);
+		}
+
+		/*// GET: Admin/ExpressionOfInterests/Delete/5
+		public async Task<ActionResult> Delete(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			ExpressionOfInterest expressionOfInterest = await db.ExpressionsOfInterest.FindAsync(id);
+			if (expressionOfInterest == null)
+			{
+				return HttpNotFound();
+			}
+			return View(expressionOfInterest);
+		}
+
+		// POST: Admin/ExpressionOfInterests/Delete/5
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public async Task<ActionResult> DeleteConfirmed(int id)
+		{
+			ExpressionOfInterest expressionOfInterest = await db.ExpressionsOfInterest.FindAsync(id);
+			db.ExpressionsOfInterest.Remove(expressionOfInterest);
+			await db.SaveChangesAsync();
+			return RedirectToAction("Index");
+		}
+		*/
+
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				db.Dispose();
+			}
+			base.Dispose(disposing);
 		}
 
 		private void AddErrors(IdentityResult result)

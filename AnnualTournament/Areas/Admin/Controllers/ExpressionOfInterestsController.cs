@@ -85,6 +85,7 @@ namespace AnnualTournament.Areas.Admin.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+				expressionOfInterest.DateModified = DateTime.Now;
 				db.Entry(expressionOfInterest).State = EntityState.Modified;
 				await db.SaveChangesAsync();
 				return RedirectToAction("Index");

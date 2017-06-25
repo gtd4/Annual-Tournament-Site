@@ -252,6 +252,7 @@
     <Content Include="Areas\Admin\Views\AdminUser\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminUser\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminUser\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\AnnualTournamentWebApp - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
