@@ -102,6 +102,7 @@ namespace AnnualTournament.Areas.Admin.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+				adminUser.UserName = adminUser.Email;
 				await UserManager.UpdateAsync(adminUser);
 				return RedirectToAction("Index");
 			}
