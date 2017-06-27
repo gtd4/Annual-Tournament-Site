@@ -98,13 +98,23 @@ namespace AnnualTournament.Areas.Admin.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<ActionResult> Edit([Bind(Include = "Id,Email")] ApplicationUser adminUser)
+		public async Task<ActionResult> Edit([Bind(Include = "Id,Email,PhoneNumber")] ApplicationUser adminUser)
 		{
 			if (ModelState.IsValid)
 			{
-				adminUser.UserName = adminUser.Email;
-				await UserManager.UpdateAsync(adminUser);
-				return RedirectToAction("Index");
+				var user = UserManager.FindById(adminUser.Id);
+				user.Email = adminUser.Email;
+				user.UserName = adminUser.Email;
+				user.PhoneNumber = adminUser.PhoneNumber;
+
+				var result = await UserManager.UpdateAsync(user);
+
+				if (result.Succeeded)
+				{
+					return RedirectToAction("Index");
+				}
+
+
 			}
 			return View(adminUser);
 		}
