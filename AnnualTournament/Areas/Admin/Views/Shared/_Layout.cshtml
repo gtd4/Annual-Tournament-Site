@@ -19,8 +19,28 @@
                 @Html.ActionLink("Back To Site", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    @Html.ActionLink("Profile", "ProfilePage", "AdminUser")
+                <ul class="nav navbar-nav admin">
+                    <li>
+                        <a href="@Url.Action("index", "ExpressionOfInterests")" class="">
+                            <i class="fa fa-pencil-square-o fa-6" aria-hidden="true"></i>Expressions Of Interests
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("index", "Notification")" class="">
+                            <i class="fa fa-envelope-o fa-6" aria-hidden="true"></i> Notifications
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("index", "AdminUser")" class="">
+                            <i class="fa fa-user-o fa-6"></i> Admin Users
+                        </a>
+                    </li>
+                    
+                </ul>
+                <ul class="nav navbar-nav admin pull-right">
+                    <li>
+                        <a href="@Url.Action("ProfilePage", "AdminUser")" class="nav-right">@User.Identity.Name</a>
+                    </li>
                 </ul>
             </div>
         </div>

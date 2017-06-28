@@ -72,3 +72,7 @@ span.fa {
     span.fa:hover {
         opacity: 1.0;
     }
+
+    .nav.admin{
+        font-size: 14px;
+    }
