@@ -18,6 +18,7 @@ namespace AnnualTournament.Areas.Admin.Controllers
 	{
 		private ApplicationDbContext db = new ApplicationDbContext();
 		private ApplicationUserManager _userManager;
+		private ApplicationSignInManager _signInManager;
 		private const string tempAdminPassword = "Password1";
 
 		public AdminUserController()
@@ -38,6 +39,18 @@ namespace AnnualTournament.Areas.Admin.Controllers
 			private set
 			{
 				_userManager = value;
+			}
+		}
+
+		public ApplicationSignInManager SignInManager
+		{
+			get
+			{
+				return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+			}
+			private set
+			{
+				_signInManager = value;
 			}
 		}
 
@@ -113,10 +126,45 @@ namespace AnnualTournament.Areas.Admin.Controllers
 				{
 					return RedirectToAction("Index");
 				}
-
-
 			}
 			return View(adminUser);
+		}
+
+		public async Task<ActionResult> ProfilePage()
+		{
+			var user = await UserManager.FindByNameAsync(User.Identity.Name);
+			return View(user);
+		}
+
+		//
+		// GET: /Manage/ChangePassword
+		public ActionResult ChangePassword()
+		{
+			return View();
+		}
+
+		//
+		// POST: /Manage/ChangePassword
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model)
+		{
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+			var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
+			if (result.Succeeded)
+			{
+				var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+				if (user != null)
+				{
+					await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+				}
+				return RedirectToAction("ProfilePage", new { Message = ManageMessageId.ChangePasswordSuccess });
+			}
+			AddErrors(result);
+			return View(model);
 		}
 
 		/*// GET: Admin/ExpressionOfInterests/Delete/5
@@ -162,5 +210,16 @@ namespace AnnualTournament.Areas.Admin.Controllers
 				ModelState.AddModelError("", error);
 			}
 		}
+	}
+
+	public enum ManageMessageId
+	{
+		AddPhoneSuccess,
+		ChangePasswordSuccess,
+		SetTwoFactorSuccess,
+		SetPasswordSuccess,
+		RemoveLoginSuccess,
+		RemovePhoneSuccess,
+		Error
 	}
 }
