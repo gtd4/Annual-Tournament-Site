@@ -1,12 +1,33 @@
-﻿@model AnnualTournament.Areas.Admin.Models.Notification
+﻿@model AnnualTournament.Areas.Admin.Models.NotificationViewModel
 @{
     ViewBag.Title = "index";
 }
 
-<h2>index</h2>
+<h2>Email Teams</h2>
 @using (Html.BeginForm("SendNotification", "Notification"))
 {
     @Html.AntiForgeryToken()
-    @Html.TextAreaFor(m => m.Message)
-    <input type="submit" value="Send Notification" />
+    <div class="form-group">
+        @*@Html.LabelFor(m => m.TeamName, new { @class = "col-md-2 control-label" })*@
+        <div class="">
+            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @placeholder = "Subject" })
+            @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(m => m.TeamName, new { @class = "col-md-2 control-label" })*@
+        <div class="">
+            @Html.TextAreaFor(m => m.Message, new { @class = "form-control message", @placeholder = "Enter Message Text Here" })
+            @Html.ValidationMessageFor(m => m.Message, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="">
+            <input type="submit" class="btn btn-default" value="Send Notification" />
+        </div>
+    </div>
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }

@@ -76,3 +76,7 @@ span.fa {
     .nav.admin{
         font-size: 14px;
     }
+
+    textarea.message{
+        height: 200px;
+    }
