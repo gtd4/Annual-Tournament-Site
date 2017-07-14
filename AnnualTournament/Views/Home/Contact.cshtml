@@ -4,19 +4,7 @@
 @{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-
-
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
-
-    <address>
-        <strong>Tournament Director:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    </address>
+<h2 class="text-center">@ViewBag.Title.</h2>
 
 <div class="col-md-6 col-md-offset-3">
 
@@ -25,7 +13,6 @@
         @using (Html.BeginForm("Enquire", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {
             @Html.AntiForgeryToken()
-
 
             @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
             <div class="form-group">
@@ -65,4 +52,3 @@
         }
     </div>
 </div>
-
