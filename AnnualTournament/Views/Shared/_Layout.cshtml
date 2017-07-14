@@ -52,18 +52,23 @@
     </div>
     <div class="container">
         <footer>
-            <p>&copy; @DateTime.Now.Year - Annual Tournament</p>
-            <div class="">
-                <div class="pull-right">
-                    <a class="btn btn-lg btn-block btn-social-icon" href="https://twitter.com/intent/tweet?url=http://annualtournamentwebapp.azurewebsites.net/&text='Register Your Interest For The Annual Tournament'">
-                        <span class="fa fa-twitter"></span>
-                    </a>
+            <div class="col-md-4">
+                <div class="pull-left">
+                    <p>Share</p>
+                    <div class="pull-left">
+                        <a class="btn btn-lg btn-block btn-social-icon" href="https://twitter.com/intent/tweet?url=http://annualtournamentwebapp.azurewebsites.net/&text='Register Your Interest For The Annual Tournament'">
+                            <span class="fa fa-twitter"></span>
+                        </a>
+                    </div>
+                    <div class="pull-left">
+                        <a class="btn btn-lg btn-block btn-social-icon" id="shareBtn">
+                            <span class="fa fa-facebook"></span>
+                        </a>
+                    </div>
                 </div>
-                <div class="pull-right">
-                    <a class="btn btn-lg btn-block btn-social-icon" id="shareBtn">
-                        <span class="fa fa-facebook"></span>
-                    </a>
-                </div>
+            </div>
+            <div class="col-md-4">
+                <p class="text-center">&copy; @DateTime.Now.Year - Annual Tournament</p>
             </div>
         </footer>
     </div>

@@ -28,8 +28,10 @@ textarea {
     min-height: 200px;
     /*max-height: 200px;*/
     background-color: black;
-    height: calc(100vh - 50px);
-    padding-bottom: 20px;
+    height: calc(100vh - 150px);
+    margin-bottom: 20px;
+    /*border: solid 5px white;*/
+
 }
 
 #circle {
