@@ -38,14 +38,14 @@
             <div class="form-group">
                 @*@Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })*@
                 <div class="">
-                    @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @placeholder = "Enter Message here" })
+                    @Html.TextAreaFor(m => m.Message, new { @class = "form-control message", @placeholder = "Enter Message here" })
                     @Html.ValidationMessageFor(m => m.Message)
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="">
-                    <input type="submit" class="btn btn-success" value="Send" />
+                    <input type="submit" class="btn btn-primary" value="Send" />
                 </div>
             </div>
         }
