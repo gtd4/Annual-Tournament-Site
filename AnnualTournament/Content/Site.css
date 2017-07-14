@@ -91,5 +91,8 @@ span.fa {
 
     .social-button-list li{
         display:inline-block;
-        border: 1px solid white;
+    }
+
+    input[type="submit"]{
+        width: 100%;
     }

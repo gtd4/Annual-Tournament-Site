@@ -4,12 +4,11 @@
 @{
     ViewBag.Title = "Contact";
 }
-<h2 class="text-center">@ViewBag.Title.</h2>
 
 <div class="col-md-6 col-md-offset-3">
 
     <div>
-        <h2 class="text-center">Make Enquiry</h2>
+        <h1 class="text-center">Make Enquiry</h1>
         @using (Html.BeginForm("Enquire", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {
             @Html.AntiForgeryToken()
@@ -46,7 +45,7 @@
 
             <div class="form-group">
                 <div class="">
-                    <input type="submit" class="btn btn-default" value="Send" />
+                    <input type="submit" class="btn btn-success" value="Send" />
                 </div>
             </div>
         }
