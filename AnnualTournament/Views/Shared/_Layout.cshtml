@@ -48,28 +48,27 @@
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()      
+        @RenderBody()
     </div>
     <div class="container">
         <footer>
-            <div class="col-md-4">
-                <div class="pull-left">
-                    <p>Share</p>
-                    <div class="pull-left">
-                        <a class="btn btn-lg btn-block btn-social-icon" href="https://twitter.com/intent/tweet?url=http://annualtournamentwebapp.azurewebsites.net/&text='Register Your Interest For The Annual Tournament'">
-                            <span class="fa fa-twitter"></span>
-                        </a>
-                    </div>
-                    <div class="pull-left">
-                        <a class="btn btn-lg btn-block btn-social-icon" id="shareBtn">
-                            <span class="fa fa-facebook"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <p class="text-center">&copy; @DateTime.Now.Year - Annual Tournament</p>
-            </div>
+            <ul class="social-button-list">
+                <li>
+                    <a class="btn btn-lg btn-block btn-social-icon" href="https://twitter.com/intent/tweet?url=http://annualtournamentwebapp.azurewebsites.net/&text='Register Your Interest For The Annual Tournament'">
+                        <span class="fa fa-twitter"></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn btn-lg btn-block btn-social-icon" id="shareBtn">
+                        <span class="fa fa-facebook"></span>
+                    </a>
+                </li>
+            </ul>
+
+              <p class="text-center" style="border:1px solid white;">&copy; @DateTime.Now.Year - Annual Tournament</p>
+
+
+
         </footer>
     </div>
     @Scripts.Render("~/bundles/modernizr")

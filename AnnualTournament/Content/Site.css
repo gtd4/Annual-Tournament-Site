@@ -82,3 +82,14 @@ span.fa {
     textarea.message{
         height: 200px;
     }
+
+    .social-button-list{
+        text-align:center;
+        list-style: none;
+        padding:0;
+    }
+
+    .social-button-list li{
+        display:inline-block;
+        border: 1px solid white;
+    }
