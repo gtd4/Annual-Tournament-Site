@@ -326,6 +326,7 @@
     <Content Include="Views\Home\RegisterExpressionSuccess.cshtml" />
     <Content Include="Views\Home\PrivacyPolicy.cshtml" />
     <Content Include="Views\Home\TermsOfService.cshtml" />
+    <Content Include="Views\Home\RegisterGoogle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
