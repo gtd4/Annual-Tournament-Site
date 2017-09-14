@@ -1,8 +1,15 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<div id="home-banner"  style="height:60px"></div>
 <h1 class="banner-heading text-center">Annual Tournament</h1>
 <div class="banner-container">
 
     <img alt="Annual Tournament Banner" class="img-responsive center-block" src="~/Content/Images/BannerImage.jpg" style="height:100%; width:100%" />
 </div>
+
+@section registerform{
+    <div class="form-container" id="register-form">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd1-RBgyTEeSApyHcGIaebRy00So4C1Lo_Ua8w1p0Nva-OACg/viewform?embedded=true" style="overflow:hidden;height:2000px;width:100%" height="1000px" width="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+</div>
+    }

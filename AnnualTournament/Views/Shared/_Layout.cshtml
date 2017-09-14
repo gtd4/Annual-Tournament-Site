@@ -6,11 +6,11 @@
     <meta name="keywords" content="Kahn Marshall, Touch Rugby, Touch Tournament" />
     <meta name="author" content="Gavin Downes" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:url" content="http://annualtournamentwebapp.azurewebsites.net/" />
+    <meta property="og:url" content="http://www.makingimpossiblepossible.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Annual Tournament" />
     <meta property="og:description" content="Register your interest in the Annual Touch Tournament to Raise Funds for Kahn Marshall" />
-    <meta property="og:image" content="http://annualtournamentwebapp.azurewebsites.net/Content/Images/BannerImage.jpg" />
+    <meta property="og:image" content="http://www.makingimpossiblepossible.com/Content/Images/BannerImage.jpg" />
 
     <title>@ViewBag.Title - Annual Tournament</title>
     @Styles.Render("~/Content/css")
@@ -26,7 +26,7 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <div class="navbar navbar-inverse">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             @*<div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -37,19 +37,34 @@
                         @Html.ActionLink("Annual Tournament", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </div>*@
             @*<div class="navbar-collapse collapse">*@
+
             <ul class="nav navbar-nav" style="width: 100%;">
-                <li class="col-xs-3 text-center">@Html.ActionLink("Home", "Index", "Home")</li>
-                <li class="col-xs-3 text-center">@Html.ActionLink("The Cause", "About", "Home")</li>
-                <li class="col-xs-3 text-center">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                <li class="col-xs-3 text-center">@Html.ActionLink("Register", "Register", "Home")</li>
+                <li class="col-xs-2"><a href="#home-banner">Home</a></li>
+                <li class="col-xs-2"><a href="#register-form">Register</a></li>
+                
+                <li class="pull-right">
+                    <a class="btn btn-lg btn-block btn-social-icon" id="shareBtn">
+                        <span class="fa fa-facebook"></span>
+                    </a>
+                </li>
+                <li class="pull-right">
+                    <a class="btn btn-lg btn-block btn-social-icon" href="https://twitter.com/intent/tweet?url=http://www.makingimpossiblepossible.com/&text='Register Your Interest For The Annual Tournament'">
+                        <span class="fa fa-twitter"></span>
+                    </a>
+                </li>
+                @*<li class="col-xs-3 text-center">@Html.ActionLink("The Cause", "About", "Home")</li>
+                <li class="col-xs-3 text-center">@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+
                 @*@Html.Partial("_LoginPartial")*@
             </ul>
+
             @*</div>*@
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
     </div>
+    @RenderSection("registerform", required: false)
     <div class="container">
         <footer>
             <ul class="social-button-list">
@@ -80,7 +95,7 @@
                 app_id: '1325645604222666',
                 method: 'share',
                 display: 'popup',
-                href: 'http://annualtournamentwebapp.azurewebsites.net/',
+                href: 'http://www.makingimpossiblepossible.com/',
             }, function (response) { });
         }
     </script>
